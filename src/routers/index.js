@@ -10,6 +10,6 @@ router.use('/auth', authRouter)
 router.use('/movie', movieRouter)
 router.use('/users', usersRouter)
 router.use('/genre', genreRouter)
-router.user('/actor', actoRouter)
+router.use('/actor', actoRouter)
 
 module.exports = router

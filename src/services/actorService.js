@@ -24,14 +24,14 @@ exports.createActor = async (actorData) => {
     }
 }
 
-exports.getAllActors = async (actorData) => {
+exports.getAllActors = async (pagination = {}) => {
     try {
         const {page = 1, limit = 10} = pagination
         const skip = (page - 1) * limit
 
         const where = {}
 
-        const genre = await prisma.genre.findMany({
+        const actor = await prisma.actor.findMany({
             where,
             skip, 
             take: limit,
@@ -44,7 +44,7 @@ exports.getAllActors = async (actorData) => {
         const totalPages = Math.ceil(total / limit)
 
         return {
-            genre, 
+            actor, 
             pagination: {
                 page,
                 limit,

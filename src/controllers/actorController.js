@@ -48,7 +48,7 @@ exports.getActorById = async (req, res) => {
 
         res.status(200).json({
             success: true,
-            data: genre
+            data: actor
         })
 
     } catch (error) {
